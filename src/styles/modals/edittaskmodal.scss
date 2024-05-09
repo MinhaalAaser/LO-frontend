@@ -1,0 +1,47 @@
+.edit-modal {
+  @include flex-column();
+
+  .modal-heading {
+    @include modal-heading();
+  }
+
+  .edit-task-field {
+    margin: 10px;
+    @include auth-input();
+    width: 300px;
+    background-color: $grey;
+    text-align: center;
+    color: $off-white;
+    font-weight: 500;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+  }
+
+  label {
+    font-family: $poppins;
+    letter-spacing: 1px;
+    font-weight: 450;
+
+    .category-picker {
+      font-family: $source;
+      letter-spacing: 1px;
+      font-weight: 450;
+      font-size: 0.9em;
+      margin-left: 10px;
+      color: $black;
+      background-color: $teal;
+      border: 1.5px solid $black;
+      border-radius: 3px;
+      padding: 5px;
+
+      .critical {
+        color: red;
+      }
+    }
+  }
+
+  .edit-modal-submit {
+    @include btn();
+    box-shadow: 0 0 5px $black;
+  }
+}

@@ -1,0 +1,40 @@
+.task-modal-container {
+  @include flex-column();
+
+  .modal-heading {
+    @include modal-heading();
+  }
+
+  .modal-fields {
+    margin-bottom: 30px;
+
+    input {
+      @include auth-input();
+      width: 300px;
+      background-color: $grey;
+      text-align: center;
+      color: $off-white;
+      font-weight: 500;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+
+      &:focus::placeholder {
+        color: $grey;
+      }
+
+      &::placeholder {
+        font-family: $source;
+        font-weight: 400;
+        font-size: 0.9em;
+        letter-spacing: 1px;
+        color: $off-white;
+        text-shadow: 0 0 1px $teal;
+      }
+    }
+  }
+
+  .modal-submit-btn {
+    @include btn();
+    box-shadow: 0 0 5px $black;
+  }
+}

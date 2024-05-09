@@ -1,0 +1,26 @@
+.delete-task-modal {
+  @include flex-column();
+
+  .modal-text {
+    justify-content: flex-start;
+    font-family: $source;
+    font-size: 1.2em;
+    letter-spacing: 0.7px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 2px $dark-teal;
+  }
+
+  .modal-buttons {
+    margin-bottom: 10px;
+
+    .delete-confirm-btn {
+      @include btn;
+      background-color: $grey;
+      color: red;
+    }
+
+    .delete-cancel-btn {
+      @include btn;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.register-page-wrapper {
+  margin: 0px 20px;
+  height: 100%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+
+  .registration-form {
+    @include flex-column();
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include form-border();
+
+    h3 {
+      @include form-heading();
+    }
+
+    input {
+      @include auth-input();
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .register-page-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 2fr);
+  }
+}

@@ -1,0 +1,46 @@
+.task-category-list-wrapper {
+  margin: 5px;
+  border: solid 2px $black;
+  border-radius: 3px;
+  @include flex-column();
+  text-align: center;
+  box-shadow: 0 0 5px $teal;
+
+  .list-header {
+    h4 {
+      color: $black;
+      text-shadow: 1px -0.5px 2px $teal;
+    }
+  }
+  .list-component {
+    @include flex-column();
+    width: 100%;
+  }
+}
+.critical {
+  h2 {
+    color: red;
+  }
+}
+.priority {
+  h2 {
+    color: darkgoldenrod;
+  }
+}
+.routine {
+  h2 {
+    color: cornflowerblue;
+  }
+}
+.completed-tasks {
+  border: 3px solid $off-white;
+  border-radius: 5px;
+  box-shadow: 2px -1px 5px $black;
+  h2 {
+    color: green;
+    text-shadow: -2px 1px 2px $black;
+  }
+  .task-action-btns-wrapper {
+    @include flex-center();
+  }
+}

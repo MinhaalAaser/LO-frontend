@@ -1,0 +1,33 @@
+.login-page-wrapper {
+  margin: 0px 20px;
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  grid-gap: 10px;
+
+  .login-form {
+    @include flex-column();
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include form-border();
+
+    h3 {
+      @include form-heading();
+    }
+
+    input {
+      @include auth-input();
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .login-page-wrapper {
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+    grid-template-columns: 2fr;
+  }
+}

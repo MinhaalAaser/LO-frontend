@@ -1,0 +1,28 @@
+.task-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .list-heading {
+    @include task-list-heading();
+  }
+  .master-list-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .category-list-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .completed-list {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .category-list-wrapper {
+    flex-direction: column;
+  }
+}

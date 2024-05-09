@@ -1,0 +1,51 @@
+.about-wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin: 20px;
+  grid-gap: 10px;
+  letter-spacing: 1.3px;
+  color: $black;
+  text-shadow: 0.2px -0.2px 1px $teal;
+
+  .about-img {
+    height: 80%;
+  }
+  .about-text {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    h3 {
+      font-family: $poppins;
+      font-size: 1.3em;
+      text-transform: uppercase;
+      font-weight: 550;
+      margin: 0;
+    }
+    h4 {
+      margin: 0;
+      font-weight: 550;
+      font-family: $poppins;
+    }
+    p,
+    li {
+      font-family: $source;
+      letter-spacing: 0.8px;
+      margin: 5px 0px;
+      font-size: 1.1em;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-wrapper {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 1fr);
+
+    .about-img {
+      height: 100%;
+      margin-bottom: 10px;
+    }
+  }
+}
