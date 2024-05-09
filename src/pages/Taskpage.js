@@ -13,7 +13,7 @@ const TaskPage = () => {
   useEffect(() => {
     axios({
       method: 'GET',
-      url: `http://127.0.0.1:5000/tasks/get?user_id=${user_id}`,
+      url: `https://life-organized-backend-044cff75bc73.herokuapp.com/tasks/get?user_id=${user_id}`,
     })
       .then((response) => {
         const taskResponse = response.data;

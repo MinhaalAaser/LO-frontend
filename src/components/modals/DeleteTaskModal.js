@@ -19,7 +19,7 @@ const DeleteTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'DELETE',
-      url: `http://127.0.0.1:5000/tasks/delete/${task_id}`,
+      url: `https://life-organized-backend-044cff75bc73.herokuapp.com/tasks/delete/${task_id}`,
     })
       .then((response) => {
         dispatch(deleteTask(task_id));

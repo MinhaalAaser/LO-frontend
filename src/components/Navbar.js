@@ -15,7 +15,7 @@ function Navbar() {
   const handleLogoutClick = () => {
     axios({
       method: 'POST',
-      url: 'http://127.0.0.1:5000/logout',
+      url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/logout',
     })
       .then((response) => {
         if (response.status === 200) {
@@ -31,7 +31,7 @@ function Navbar() {
   // const handleEditUserClick = () => {
   //   axios({
   //     method: 'POST',
-  //     url: 'http://127.0.0.1:5000/logout',
+  //     url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/logout',
   //   })
   //     .then((response) => {
   //       if (response.status === 200) {

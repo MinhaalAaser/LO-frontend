@@ -24,7 +24,7 @@ const LoginPage = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'http://127.0.0.1:5000/login',
+      url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/login',
       data: {
         email,
         pwd,
