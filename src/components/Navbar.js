@@ -15,7 +15,7 @@ function Navbar() {
   const handleLogoutClick = () => {
     axios({
       method: 'POST',
-      url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/logout',
+      url: 'https://lo-backend.onrender.com/logout',
     })
       .then((response) => {
         if (response.status === 200) {
@@ -31,7 +31,7 @@ function Navbar() {
   // const handleEditUserClick = () => {
   //   axios({
   //     method: 'POST',
-  //     url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/logout',
+  //     url: 'https://lo-backend.onrender.com/logout',
   //   })
   //     .then((response) => {
   //       if (response.status === 200) {

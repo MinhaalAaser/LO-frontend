@@ -26,7 +26,7 @@ function RegisterPage() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/register',
+      url: 'https://lo-backend.onrender.com/register',
       data: {
         firstname,
         lastname,

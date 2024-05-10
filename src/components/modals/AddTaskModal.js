@@ -15,7 +15,7 @@ const AddTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'https://life-organized-backend-044cff75bc73.herokuapp.com/tasks/add',
+      url: 'https://lo-backend.onrender.com/tasks/add',
       data: {
         user_id: user_id,
         task: task,
