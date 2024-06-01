@@ -14,28 +14,28 @@ const TaskCategory = ({ category }) => {
   const userTasks = useSelector((state) => state.Auth.tasks);
   const categoryTasks = userTasks.filter((task) => task.category === category);
 
-  const handleDragLeave = (event) => {
-    event.preventDefault();
-  };
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
-  const handleDragEnter = (event) => {
-    event.preventDefault();
-  };
+  // const handleDragLeave = (event) => {
+  //   event.preventDefault();
+  // };
+  // const handleDragOver = (event) => {
+  //   event.preventDefault();
+  // };
+  // const handleDragEnter = (event) => {
+  //   event.preventDefault();
+  // };
 
-  const handleTaskDrop = (event) => {
-    event.preventDefault();
-    console.log(event);
-  };
+  // const handleTaskDrop = (event) => {
+  //   event.preventDefault();
+  //   console.log(event);
+  // };
 
   return (
     <div
       className={`task-category-list-wrapper ${categoryClass}`}
-      onDrop={handleTaskDrop}
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDragEnter={handleDragEnter}
+      // onDrop={handleTaskDrop}
+      // onDragOver={handleDragOver}
+      // onDragLeave={handleDragLeave}
+      // onDragEnter={handleDragEnter}
     >
       <div className="list-header">
         <h2>{`${category} tasks `}</h2>
