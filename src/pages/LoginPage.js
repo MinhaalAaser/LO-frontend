@@ -24,7 +24,7 @@ const LoginPage = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'https://salazarthorn.tplinkdns.com:5000/login',
+      url: 'https://131.93.98.37:5000/login',
       data: {
         email,
         pwd,

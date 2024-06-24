@@ -15,7 +15,7 @@ const AddTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'https://salazarthorn.tplinkdns.com:5000/tasks/add',
+      url: 'https://131.93.98.37:5000/tasks/add',
       data: {
         user_id: user_id,
         task: task,
