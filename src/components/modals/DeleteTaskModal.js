@@ -19,7 +19,7 @@ const DeleteTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'DELETE',
-      url: `https://lo-backend.onrender.com/tasks/delete/${task_id}`,
+      url: `https://salazarthorn.tplinkdns.com:5000/tasks/delete/${task_id}`,
     })
       .then((response) => {
         dispatch(deleteTask(task_id));

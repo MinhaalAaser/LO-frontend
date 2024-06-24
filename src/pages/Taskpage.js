@@ -13,7 +13,7 @@ const TaskPage = () => {
   useEffect(() => {
     axios({
       method: 'GET',
-      url: `https://lo-backend.onrender.com/tasks/get?user_id=${user_id}`,
+      url: `https://salazarthorn.tplinkdns.com:5000/tasks/get?user_id=${user_id}`,
     })
       .then((response) => {
         const taskResponse = response.data;
