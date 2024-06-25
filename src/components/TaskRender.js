@@ -20,7 +20,7 @@ function TaskRender(tasks) {
   const UpdateTasks = () => {
     axios({
       method: 'GET',
-      url: `http://salazarthorn.tplinkdns.com:5000/tasks/get?user_id=${user_id}`,
+      url: `https://salazarthorn.tplinkdns.com:5000/tasks/get?user_id=${user_id}`,
     })
       .then((response) => {
         const taskResponse = response.data;
@@ -38,7 +38,7 @@ function TaskRender(tasks) {
     dispatch(updateTasks({ taskId, newCategory, user_id, task }));
     axios({
       method: 'PUT',
-      url: `http://salazarthorn.tplinkdns.com:5000/tasks/edit/${taskId}`,
+      url: `https://salazarthorn.tplinkdns.com:5000/tasks/edit/${taskId}`,
       data: {
         task_id: taskId,
         user_id: user_id,
