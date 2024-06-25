@@ -26,7 +26,7 @@ function RegisterPage() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'https://salazarthorn.tplinkdns.com:5000/register',
+      url: 'salazarthorn.tplinkdns.com:5000/register',
       data: {
         firstname,
         lastname,
