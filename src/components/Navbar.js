@@ -15,7 +15,7 @@ function Navbar() {
   const handleLogoutClick = () => {
     axios({
       method: 'POST',
-      url: 'salazarthorn.tplinkdns.com:5000/logout',
+      url: 'https://salazarthorn.tplinkdns.com:5000/logout',
     })
       .then((response) => {
         if (response.status === 200) {
@@ -31,7 +31,7 @@ function Navbar() {
   // const handleEditUserClick = () => {
   //   axios({
   //     method: 'POST',
-  //     url: 'salazarthorn.tplinkdns.com:5000/logout',
+  //     url: 'https://salazarthorn.tplinkdns.com:5000/logout',
   //   })
   //     .then((response) => {
   //       if (response.status === 200) {
