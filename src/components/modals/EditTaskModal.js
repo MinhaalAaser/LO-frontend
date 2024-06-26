@@ -30,7 +30,7 @@ const EditTaskModal = () => {
   const UpdateTasks = () => {
     axios({
       method: 'GET',
-      url: `https://salazarthorn.tplinkdns.com:5000/tasks/get?user_id=${user_id}`,
+      url: `https://salazarthorn.tplinkdns.com/tasks/get?user_id=${user_id}`,
     })
       .then((response) => {
         const taskResponse = response.data;
@@ -43,7 +43,7 @@ const EditTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'PUT',
-      url: `https://salazarthorn.tplinkdns.com:5000/tasks/edit/${task_id}`,
+      url: `https://salazarthorn.tplinkdns.com/tasks/edit/${task_id}`,
       data: {
         task_id: task_id,
         user_id: user_id,
