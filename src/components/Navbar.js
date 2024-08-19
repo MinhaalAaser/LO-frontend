@@ -15,7 +15,7 @@ function Navbar() {
   const handleLogoutClick = () => {
     axios({
       method: 'POST',
-      url: 'https://salazarthorn.tplinkdns.com/logout',
+      url: 'https://api.aaserzypher.dev/logout',
     })
       .then((response) => {
         if (response.status === 200) {
@@ -31,7 +31,7 @@ function Navbar() {
   // const handleEditUserClick = () => {
   //   axios({
   //     method: 'POST',
-  //     url: 'https://salazarthorn.tplinkdns.com/logout',
+  //     url: 'https://api.aaserzypher.dev/logout',
   //   })
   //     .then((response) => {
   //       if (response.status === 200) {

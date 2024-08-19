@@ -26,7 +26,7 @@ function RegisterPage() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'https://salazarthorn.tplinkdns.com/register',
+      url: 'https://api.aaserzypher.dev/register',
       data: {
         firstname,
         lastname,

@@ -24,7 +24,7 @@ const LoginPage = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'https://salazarthorn.tplinkdns.com/login',
+      url: 'https://api.aaserzypher.dev/login',
       data: {
         email,
         pwd,
