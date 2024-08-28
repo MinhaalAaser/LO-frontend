@@ -19,7 +19,7 @@ const DeleteTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'DELETE',
-      url: `https://api.aaserzypher.dev/tasks/delete/${task_id}`,
+      url: `https://api.aaserzypher.dev/life-organized/tasks/delete/${task_id}`,
     })
       .then((response) => {
         dispatch(deleteTask(task_id));

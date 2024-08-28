@@ -15,7 +15,7 @@ function Navbar() {
   const handleLogoutClick = () => {
     axios({
       method: 'POST',
-      url: 'https://api.aaserzypher.dev/logout',
+      url: 'https://api.aaserzypher.dev/life-organized/logout',
     })
       .then((response) => {
         if (response.status === 200) {
@@ -31,7 +31,7 @@ function Navbar() {
   // const handleEditUserClick = () => {
   //   axios({
   //     method: 'POST',
-  //     url: 'https://api.aaserzypher.dev/logout',
+  //     url: 'https://api.aaserzypher.dev/life-organized/logout',
   //   })
   //     .then((response) => {
   //       if (response.status === 200) {

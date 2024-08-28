@@ -13,7 +13,7 @@ const TaskPage = () => {
   useEffect(() => {
     axios({
       method: 'GET',
-      url: `https://api.aaserzypher.dev/tasks/get?user_id=${user_id}`,
+      url: `https://api.aaserzypher.dev/life-organized/tasks/get?user_id=${user_id}`,
     })
       .then((response) => {
         const taskResponse = response.data;

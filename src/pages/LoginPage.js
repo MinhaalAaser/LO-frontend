@@ -24,7 +24,7 @@ const LoginPage = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'https://api.aaserzypher.dev/login',
+      url: 'https://api.aaserzypher.dev/life-organized/login',
       data: {
         email,
         pwd,

@@ -20,7 +20,7 @@ function TaskRender(tasks) {
   const UpdateTasks = () => {
     axios({
       method: 'GET',
-      url: `https://api.aaserzypher.dev/tasks/get?user_id=${user_id}`,
+      url: `https://api.aaserzypher.dev/life-organized/tasks/get?user_id=${user_id}`,
     })
       .then((response) => {
         const taskResponse = response.data;
@@ -38,7 +38,7 @@ function TaskRender(tasks) {
     dispatch(updateTasks({ taskId, newCategory, user_id, task }));
     axios({
       method: 'PUT',
-      url: `https://api.aaserzypher.dev/tasks/edit/${taskId}`,
+      url: `https://api.aaserzypher.dev/life-organized/tasks/edit/${taskId}`,
       data: {
         task_id: taskId,
         user_id: user_id,

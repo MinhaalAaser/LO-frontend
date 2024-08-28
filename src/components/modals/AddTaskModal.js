@@ -15,7 +15,7 @@ const AddTaskModal = () => {
     event.preventDefault();
     axios({
       method: 'POST',
-      url: 'https://api.aaserzypher.dev/tasks/add',
+      url: 'https://api.aaserzypher.dev/life-organized/tasks/add',
       data: {
         user_id: user_id,
         task: task,

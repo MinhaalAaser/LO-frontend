@@ -26,7 +26,7 @@ function RegisterPage() {
     event.preventDefault();
     axios({
       method: 'post',
-      url: 'https://api.aaserzypher.dev/register',
+      url: 'https://api.aaserzypher.dev/life-organized/register',
       data: {
         firstname,
         lastname,
