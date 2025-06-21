@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   id: '',
   email: '',
-  pwd: '',
+  password: '',
   firstname: '',
   lastname: '',
   tasks: [],
@@ -26,7 +26,7 @@ const authSlice = createSlice({
       state.accessToken = token;
       state.id = id;
       state.email = email;
-      state.pwd = '';
+      state.password = '';
       state.firstname = firstname;
       state.lastname = lastname;
       state.tasks = tasks;
