@@ -13,7 +13,7 @@ function RegisterPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { email, pwd, firstname, lastname } = useSelector(
+  const { email, password, firstname, lastname } = useSelector(
     (state) => state.Auth
   );
 
@@ -31,7 +31,7 @@ function RegisterPage() {
         firstname,
         lastname,
         email,
-        pwd,
+        password,
       },
       headers: {
         'Content-Type': 'application/json',
@@ -97,9 +97,9 @@ function RegisterPage() {
         <input
           type="password"
           onChange={handleChange}
-          name="pwd"
+          name="password"
           placeholder="Password"
-          value={pwd}
+          value={password}
           autoComplete="new-password"
           onKeyDown={handlePressReturn}
         />

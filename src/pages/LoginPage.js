@@ -13,7 +13,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { email, pwd } = useSelector((state) => state.Auth);
+  const { email, password } = useSelector((state) => state.Auth);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,7 +27,7 @@ const LoginPage = () => {
       url: 'https://api.aaserzypher.dev/life-organized/login',
       data: {
         email,
-        pwd,
+        password,
       },
     })
       .then((response) => {
@@ -72,9 +72,9 @@ const LoginPage = () => {
         <input
           type="password"
           onChange={handleChange}
-          name="pwd"
+          name="password"
           placeholder="Password"
-          value={pwd}
+          value={password}
           autoComplete="new-password"
           onKeyDown={handlePressReturn}
         />
