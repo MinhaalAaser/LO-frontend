@@ -33,6 +33,10 @@ function RegisterPage() {
         email,
         pwd,
       },
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      withCredentials: true,
     })
       .then((response) => {
         const userData = response.data;
