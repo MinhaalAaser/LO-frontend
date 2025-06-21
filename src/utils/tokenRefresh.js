@@ -1,5 +1,5 @@
 // src/utils/tokenRefresh.js
-import store from '../store';
+import { store } from '../store';
 import { refreshAccessToken } from '../features/login/authSlice';
 import axios from 'axios';
 
