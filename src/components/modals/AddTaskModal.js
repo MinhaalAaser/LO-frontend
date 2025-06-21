@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReactModal from 'react-modal';
 import { closeModal } from '../../features/modal/addModalSlice';
 import { resetState, updateField } from '../../features/to-do-list/taskSlice';
-import axios from 'axios';
 import { addTask } from '../../features/login/authSlice';
+import { apiWithAutoRefresh } from '../../utils/tokenRefresh';
 
 const AddTaskModal = () => {
   const user_id = useSelector((state) => state.Auth.id);
@@ -13,13 +13,11 @@ const AddTaskModal = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    axios({
+    apiWithAutoRefresh({
       method: 'POST',
       url: 'https://api.aaserzypher.dev/life-organized/tasks/add',
-      data: {
-        user_id: user_id,
-        task: task,
-      },
+      data: { task },
+      withCredentials: true,
     })
       .then((response) => {
         const newTask = response.data;

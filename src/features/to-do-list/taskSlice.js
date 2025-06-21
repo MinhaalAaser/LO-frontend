@@ -12,9 +12,8 @@ const taskSlice = createSlice({
   initialState,
   reducers: {
     updateTasks: (state, action) => {
-      const { task_id, user_id, task, category } = action.payload;
+      const { task_id, task, category } = action.payload;
       state.task_id = task_id;
-      state.user_id = user_id;
       state.task = task;
       state.category = category;
     },

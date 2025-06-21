@@ -8,6 +8,7 @@ const initialState = {
   lastname: '',
   tasks: [],
   isAuthenticated: false,
+  accessToken: '',
 };
 
 const authSlice = createSlice({
@@ -20,8 +21,9 @@ const authSlice = createSlice({
     },
 
     loginSuccess: (state, action) => {
-      const { id, email, firstname, lastname, tasks } = action.payload;
+      const { id, email, firstname, lastname, tasks, token } = action.payload;
       state.isAuthenticated = true;
+      state.accessToken = token;
       state.id = id;
       state.email = email;
       state.pwd = '';
@@ -30,26 +32,24 @@ const authSlice = createSlice({
       state.tasks = tasks;
     },
 
-    resetAuthState: (state) => {
-      return initialState;
+    refreshAccessToken: (state, action) => {
+      state.accessToken = action.payload;
     },
+
+    resetAuthState: () => initialState,
 
     addTask: (state, action) => {
       state.tasks.push(action.payload);
     },
 
     deleteTask: (state, action) => {
-      return {
-        ...state,
-        tasks: state.tasks.filter((task) => task.task_id !== action.payload),
-      };
+      state.tasks = state.tasks.filter(
+        (task) => task.task_id !== action.payload
+      );
     },
 
     updateUserTaskList: (state, action) => {
-      return {
-        ...state,
-        tasks: action.payload,
-      };
+      state.tasks = action.payload;
     },
   },
 });
@@ -57,6 +57,7 @@ const authSlice = createSlice({
 export const {
   updateField,
   loginSuccess,
+  refreshAccessToken,
   resetAuthState,
   addTask,
   deleteTask,

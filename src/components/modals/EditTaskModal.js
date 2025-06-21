@@ -1,9 +1,9 @@
 import ReactModal from 'react-modal';
-import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeEditModal } from '../../features/modal/editModalSlice';
 import { resetState, updateField } from '../../features/to-do-list/taskSlice';
 import { updateUserTaskList } from '../../features/login/authSlice';
+import { apiWithAutoRefresh } from '../../utils/tokenRefresh';
 
 const EditTaskModal = () => {
   const dispatch = useDispatch();
@@ -28,9 +28,10 @@ const EditTaskModal = () => {
   };
 
   const UpdateTasks = () => {
-    axios({
+    apiWithAutoRefresh({
       method: 'GET',
-      url: `https://api.aaserzypher.dev/life-organized/tasks/get?user_id=${user_id}`,
+      url: `https://api.aaserzypher.dev/life-organized/tasks/get`,
+      withCredentials: true,
     })
       .then((response) => {
         const taskResponse = response.data;
@@ -41,15 +42,14 @@ const EditTaskModal = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios({
+    apiWithAutoRefresh({
       method: 'PUT',
       url: `https://api.aaserzypher.dev/life-organized/tasks/edit/${task_id}`,
       data: {
-        task_id: task_id,
-        user_id: user_id,
-        task: task,
-        category: category,
+        task,
+        category,
       },
+      withCredentials: true,
     })
       .then(() => {
         UpdateTasks();

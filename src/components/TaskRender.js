@@ -10,6 +10,7 @@ import { openDeleteModal } from '../features/modal/deleteModalSlice';
 import DeleteTaskModal from './modals/DeleteTaskModal';
 import { openEditModal } from '../features/modal/editModalSlice';
 import EditTaskModal from './modals/EditTaskModal';
+import { apiWithAutoRefresh } from '../utils/tokenRefresh';
 
 function TaskRender(tasks) {
   const dispatch = useDispatch();
@@ -18,9 +19,10 @@ function TaskRender(tasks) {
   const { task_id, user_id, task, category } = tasks;
 
   const UpdateTasks = () => {
-    axios({
+    apiWithAutoRefresh({
       method: 'GET',
-      url: `https://api.aaserzypher.dev/life-organized/tasks/get?user_id=${user_id}`,
+      url: `https://api.aaserzypher.dev/life-organized/tasks/get`,
+      withCredentials: true,
     })
       .then((response) => {
         const taskResponse = response.data;
@@ -36,15 +38,14 @@ function TaskRender(tasks) {
     task,
   }) => {
     dispatch(updateTasks({ taskId, newCategory, user_id, task }));
-    axios({
+    apiWithAutoRefresh({
       method: 'PUT',
       url: `https://api.aaserzypher.dev/life-organized/tasks/edit/${taskId}`,
       data: {
-        task_id: taskId,
-        user_id: user_id,
-        task: task,
+        task,
         category: newCategory,
       },
+      withCredentials: true,
     })
       .then(() => {
         dispatch(resetState());

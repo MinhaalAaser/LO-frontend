@@ -1,10 +1,10 @@
-import axios from 'axios';
 import React from 'react';
 import ReactModal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeDeleteModal } from '../../features/modal/deleteModalSlice';
 import { deleteTask } from '../../features/login/authSlice';
 import { resetState } from '../../features/to-do-list/taskSlice';
+import { apiWithAutoRefresh } from '../../utils/tokenRefresh';
 
 const DeleteTaskModal = () => {
   const task_id = useSelector((state) => state.Task.task_id);
@@ -17,11 +17,12 @@ const DeleteTaskModal = () => {
 
   const handleConfirmDelete = async (event) => {
     event.preventDefault();
-    axios({
+    apiWithAutoRefresh({
       method: 'DELETE',
       url: `https://api.aaserzypher.dev/life-organized/tasks/delete/${task_id}`,
+      withCredentials: true,
     })
-      .then((response) => {
+      .then(() => {
         dispatch(deleteTask(task_id));
         dispatch(resetState());
         dispatch(closeDeleteModal());
