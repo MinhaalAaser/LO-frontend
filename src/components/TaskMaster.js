@@ -8,7 +8,9 @@ function TaskMaster() {
   const firstname = useSelector((state) => state.Auth.firstname);
   const dispatch = useDispatch();
   const userTasks = useSelector((state) => state.Auth.tasks);
-  const masterTasks = userTasks.filter((task) => task.category === 'Master');
+  const masterTasks =
+    state.Auth.tasks &&
+    state.Auth.tasks.filter((task) => task.category === 'Master');
 
   return (
     <div className="task-list-wrapper">

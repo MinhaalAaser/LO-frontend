@@ -21,7 +21,14 @@ const authSlice = createSlice({
     },
 
     loginSuccess: (state, action) => {
-      const { id, email, firstname, lastname, tasks, token } = action.payload;
+      const {
+        id,
+        email,
+        firstname,
+        lastname,
+        tasks = [],
+        token,
+      } = action.payload;
       state.isAuthenticated = true;
       state.accessToken = token;
       state.id = id;
